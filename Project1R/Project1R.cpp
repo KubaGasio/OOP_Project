@@ -27,7 +27,15 @@ int main()
 			} while (tie = true);
 		}
 		else if (choice == 2) {
-
+			ComputerPlayer c;
+			HumanPlayer h;
+			bool tie = c.getTie();
+			do {
+				c.DrawBoard();
+				c.NextPlayer();
+				c.PlaceValue();
+				c.CheckWin();
+			} while (tie = true);
 		}
 		else if (choice != 3) {
 			cout << "You've entered an invalid input. Please try again." << endl;
