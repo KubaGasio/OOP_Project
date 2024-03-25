@@ -9,7 +9,9 @@ protected:
 
 	string UserName1;
 
+	int xPosition;
 
+	int yPosition;
 
 	
 
@@ -24,9 +26,12 @@ public:
 	void PlayerInputs2();
 
 	void getUserName();
+	
+	void setXPosition(int x);
 
-	int xPosition;
+	void setYPosition(int y);
 
-	int yPosition;
+	void getPosition();
+
 
 };
