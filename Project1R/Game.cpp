@@ -6,34 +6,35 @@ Game::Game() {
     Full = false;
     GameBoard[3][3] = {};
     Win = false;
+    Tie = false;
 }
-bool Game::CheckWin() {
+void Game::CheckWin() {
     if (GameBoard[0][0] == GameBoard[0][1] && GameBoard[0][1] == GameBoard[0][2]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[1][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[1][2]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[2][0] == GameBoard[2][1] && GameBoard[2][1] == GameBoard[2][2]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[0][1] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][1]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[0][2] == GameBoard[1][2] && GameBoard[1][2] == GameBoard[2][2]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[0][0] == GameBoard[1][0] && GameBoard[1][0] == GameBoard[2][0]) {
-        return true;
+        Win = true;
     }
     else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0]) {
-        return true;
+        Win = true;
     }
     else {
-        return false;
+        Win = false;
     }
 }
 void Game::DrawBoard() {
@@ -56,12 +57,29 @@ void Game::WinCounter() {
     }
 
 }
-bool Game::isFull() {
+void Game::isFull() {
     if (CurrentSize == 9) {
         Full = true;
     }
     else {
         Full = false;
     }
-    return Full;
+
+}
+void Game::CheckTie() {
+    if (Full = true) {
+        Tie = true;
+    }
+    else if (Win = true) {
+        Tie = true;
+    }
+    else {
+        Tie = false;
+    }
+}
+bool Game::getTie() {
+    return Tie;
+}
+void Game::PlaceValue() {
+
 }

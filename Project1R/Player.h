@@ -13,7 +13,7 @@ protected:
 
 	int yPosition;
 
-	
+
 
 public:
 
@@ -26,12 +26,16 @@ public:
 	void PlayerInputs2();
 
 	void getUserName();
-	
+
 	void setXPosition(int x);
 
 	void setYPosition(int y);
 
-	void getPosition();
+	int getXPosition();
+
+	int getYPosition();
+	void PlaceValue();
 
 
 };
+

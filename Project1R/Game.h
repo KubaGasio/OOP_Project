@@ -11,7 +11,7 @@ class Game {
 
 protected:
 
-	
+
 
 	bool Win;
 
@@ -19,20 +19,27 @@ protected:
 
 	bool Full;
 	int CurrentSize;
-
+	char GameBoard[3][3];
+	bool Tie;
 public:
 
 	Game();
 
-	bool CheckWin();
+	void CheckWin();
 
 	void DrawBoard();
 
 	void WinCounter();
 
-	bool isFull();
+	void isFull();
 
-	char GameBoard[3][3];
+	void PlaceValue();
+
+	void CheckTie();
+	bool getTie();
+
+
+
 
 
 };

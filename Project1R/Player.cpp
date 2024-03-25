@@ -13,6 +13,25 @@ Player::Player() {
 
 
 }
+void Player::setXPosition(int x) {
+	xPosition = x;
+
+}
+
+void Player::setYPosition(int y) {
+	yPosition = y;
+
+}
+
+int Player::getXPosition() {
+	return xPosition;
+
+}
+int Player::getYPosition() {
+	return yPosition;
+}
+
+
 
 void Player::NextPlayer() {
 	int Check = Turn % 2;
@@ -65,4 +84,13 @@ void Player::PlayerInputs2() {
 void Player::getUserName() {
 	cout << "Please give Player1's name:";
 	cin >> UserName1;
+}
+void Player::PlaceValue() {
+	int Check = Turn % 2;
+	if (Check = 0) {
+		GameBoard[xPosition][yPosition] = 'X';
+	}
+	else {
+		GameBoard[xPosition][yPosition] = 'Y';
+	}
 }

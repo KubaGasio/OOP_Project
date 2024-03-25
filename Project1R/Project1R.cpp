@@ -17,10 +17,14 @@ int main()
 
 		if (choice == 1) {
 			HumanPlayer h;
-			h.getUserName2();
-			h.DrawBoard();
-			h.PlayerInputs1();
-			h.GameBoard[h.xPosition][h.yPosition] = 'X';
+			bool tie = h.getTie();
+			do {
+				h.getUserName2();
+				h.DrawBoard();
+				h.NextPlayer();
+				h.PlaceValue();
+				h.CheckWin();
+			} while (tie = true);
 		}
 		else if (choice == 2) {
 
@@ -32,4 +36,3 @@ int main()
 
 	} while (choice == 3);
 }
-
