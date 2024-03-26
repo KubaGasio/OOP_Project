@@ -20,11 +20,12 @@ int main()
 			bool tie = h.getTie();
 			h.getUserName2();
 			do {
-				
 				h.DrawBoard();
+				h.CheckWin();
 				h.NextPlayer();
 				h.PlaceValue();
-				h.CheckWin();
+
+				;
 			} while (tie = true);
 		}
 		else if (choice == 2) {

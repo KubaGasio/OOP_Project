@@ -38,7 +38,7 @@ public:
 	void CheckTie();
 	bool getTie();
 
-
+	void resetBoard();
 
 
 
