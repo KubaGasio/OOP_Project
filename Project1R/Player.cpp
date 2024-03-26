@@ -46,68 +46,83 @@ void Player::NextPlayer() {
 
 }
 void Player::SamePosition() {
+
 	if (GameBoard[xPosition][yPosition] == 'X') {
 		Same = true;
 	}
 	else if (GameBoard[xPosition][yPosition] == 'Y') {
 		Same = true;
 	}
-	else {
+	else if(GameBoard[xPosition][yPosition] =='\0') {
 		Same = false;
 	}
 }
 
 void Player::PlayerInputs1() {
-	
+	bool validInput = false; // Flag to control loop
+
 	do {
-		
 		cout << "Row position: ";
 		cin >> xPosition;
 		cout << "Column position:";
 		cin >> yPosition;
-		SamePosition();
-		if (xPosition < 0 || xPosition > 2) {
-			cout << "The row value is not in the range." << endl;
+
+		// Range checks first
+		if (xPosition < 0 || xPosition > 2 || yPosition < 0 || yPosition > 2) {
+			cout << "Input is out of range. Please enter values between 0 and 2." << endl;
+			validInput = false;
 		}
-		else if (yPosition < 0 || yPosition > 2) {
-			cout << "The column value is not in the range." << endl;
+		else {
+			SamePosition(); // Check if position is occupied
+
+			if (Same==true) {
+				cout << "Invalid position, space already occupied. Please try again." << endl;
+				validInput = false;
+			}
+			else {
+				validInput = true; // Input passed all checks
+				CurrentSize++;
+				isFull();
+			}
 		}
-		else if (Same=true) { // Check for conflict if range is valid
-			cout << "Invalid position, please enter a new position." << endl;
-		}
-	} while (xPosition < 0 || xPosition > 2||yPosition<0 ||yPosition>2 || !Same);
-
-	// Repeat the same structure for yPosition
-
-	
-	CurrentSize++;
-	isFull();
-
-
+	} while (!validInput);
 }
+
+// Modify PlayerInputs2 similarly
+
 void Player::PlayerInputs2() {
-	do {
+	bool validInput = false; // Flag to control loop
 
+	do {
 		cout << "Row position: ";
 		cin >> xPosition;
 		cout << "Column position:";
 		cin >> yPosition;
-		SamePosition();
-		if (xPosition < 0 || xPosition > 2) {
-			cout << "The row value is not in the range." << endl;
-		}
-		else if (yPosition < 0 || yPosition > 2) {
-			cout << "The column value is not in the range." << endl;
-		}
-		else if (Same=true) { // Check for conflict if range is valid
-			cout << "Invalid position, please enter a new position." << endl;
-		}
-	} while (xPosition < 0 || xPosition > 2 || yPosition < 0 || yPosition>2 || !Same);
 
-	CurrentSize++;
+		// Range checks first
+		if (xPosition < 0 || xPosition > 2 || yPosition < 0 || yPosition > 2) {
+			cout << "Input is out of range. Please enter values between 0 and 2." << endl;
+			validInput = false;
 
-	isFull();
+		}
+		else {
+			SamePosition(); // Check if position is occupied
+
+			if (Same==true) {
+				cout << "Invalid position, space already occupied. Please try again." << endl;
+				validInput = false;
+			}
+			else {
+				validInput = true; // Input passed all checks
+				CurrentSize++;
+				isFull();
+			}
+		}
+	} while (!validInput);
 }
+
+// Modify PlayerInputs2 similarly
+
 void Player::getUserName() {
 	cout << "Please give Player1's name:";
 	cin >> UserName1;
