@@ -18,8 +18,9 @@ int main()
 		if (choice == 1) {
 			HumanPlayer h;
 			bool tie = h.getTie();
+			h.getUserName2();
 			do {
-				h.getUserName2();
+				
 				h.DrawBoard();
 				h.NextPlayer();
 				h.PlaceValue();

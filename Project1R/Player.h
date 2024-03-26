@@ -12,7 +12,7 @@ protected:
 	int xPosition;
 
 	int yPosition;
-
+	bool Same;
 
 
 public:
@@ -35,6 +35,7 @@ public:
 
 	int getYPosition();
 	void PlaceValue();
+	void SamePosition();
 
 
 };
