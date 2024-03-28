@@ -1,6 +1,7 @@
 #include "Game.h" 
 
 Game::Game() {
+    Turn = 0;
     WCounter = 0;
     CurrentSize = 0;
     Full = false;
@@ -14,15 +15,40 @@ Game::Game() {
     Win = false;
     Tie = false;
 }
+
 void Game::CheckWin() {
 
     for (int i = 0; i < 3; i++) {
 
-        if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'X') {
+        if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'O') {
 
             Win = true;
             WinCounter();
 
+        }
+
+        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'O') {
+
+            Win = true;
+            WinCounter();
+        }
+
+        else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'O') {
+
+            Win = true;
+            WinCounter();
+        }
+
+        else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'O') {
+
+            Win = true;
+            WinCounter();
+        }
+
+        else if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'X') {
+
+            Win = true;
+            WinCounter();
         }
 
         else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'X') {
@@ -43,30 +69,6 @@ void Game::CheckWin() {
             WinCounter();
         }
 
-        else if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'Y') {
-
-            Win = true;
-            WinCounter();
-        }
-
-        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'Y') {
-
-            Win = true;
-            WinCounter();
-        }
-
-        else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'Y') {
-
-            Win = true;
-            WinCounter();
-        }
-
-        else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'Y') {
-
-            Win = true;
-            WinCounter();
-        }
-
         else {
 
             Win = false;
@@ -79,14 +81,16 @@ void Game::CheckWin() {
 
 }
 void Game::DrawBoard() {
-    cout << "------------" << endl;
+    cout << "\n   1   2   3" << endl;
+    cout << "  ----------" << endl;
+    
     for (int row = 0; row < 3; row++) {
-        cout << " | ";
+        cout << row+1<<" | ";
         for (int col = 0; col < 3; col++) {
             cout << GameBoard[row][col] << " | ";
         }
         cout << endl;
-        cout << "------------" << endl;
+        cout << "  ----------" << endl;
 
     }
 
@@ -99,6 +103,7 @@ void Game::resetBoard() {
             GameBoard[i][c] = '\0';
         }
     }
+    Turn = 0;
 }
 void Game::WinCounter() {
     if (Win == true) {

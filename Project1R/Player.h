@@ -5,7 +5,7 @@ class Player :public Game {
 
 protected:
 
-	int Turn;
+	
 
 	string UserName1;
 
@@ -13,8 +13,8 @@ protected:
 
 	int yPosition;
 	bool Same;
-
-
+	string inputline;
+	
 public:
 
 	Player();

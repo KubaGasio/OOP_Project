@@ -10,7 +10,8 @@ private:
 public:
 
 	void getUserName2();
-
-
+	void Winner();
+	void CheckWin();
+	void WinCounter();
 
 };

@@ -2,16 +2,16 @@
 
 Player::Player() {
 
-	Turn = 0;
+
 
 	UserName1 = "";
 
-	xPosition = 0;
+	xPosition = 1;
 
-	yPosition = 0;
+	yPosition = 1;
 
 	Same = false;
-
+	inputline = "";
 }
 void Player::setXPosition(int x) {
 	xPosition = x;
@@ -47,13 +47,13 @@ void Player::NextPlayer() {
 }
 void Player::SamePosition() {
 
-	if (GameBoard[xPosition][yPosition] == 'X') {
+	if (GameBoard[xPosition-1][yPosition-1] == 'O') {
 		Same = true;
 	}
-	else if (GameBoard[xPosition][yPosition] == 'Y') {
+	else if (GameBoard[xPosition-1][yPosition-1] == 'X') {
 		Same = true;
 	}
-	else if(GameBoard[xPosition][yPosition] =='\0') {
+	else if(GameBoard[xPosition-1][yPosition-1] =='\0') {
 		Same = false;
 	}
 }
@@ -62,14 +62,14 @@ void Player::PlayerInputs1() {
 	bool validInput = false; // Flag to control loop
 
 	do {
-		cout << "Row position: ";
-		cin >> xPosition;
-		cout << "Column position:";
-		cin >> yPosition;
-
+		
+		cout << "Enter row and column:";
+		cin.ignore();
+		cin >> xPosition >> yPosition;
+		
 		// Range checks first
-		if (xPosition < 0 || xPosition > 2 || yPosition < 0 || yPosition > 2) {
-			cout << "Input is out of range. Please enter values between 0 and 2." << endl;
+		if (xPosition < 1 || xPosition > 3 || yPosition < 1 || yPosition > 3) {
+			cout << "Input is out of range. Please enter values between 1 and 3." << endl;
 			validInput = false;
 		}
 		else {
@@ -94,14 +94,16 @@ void Player::PlayerInputs2() {
 	bool validInput = false; // Flag to control loop
 
 	do {
-		cout << "Row position: ";
-		cin >> xPosition;
-		cout << "Column position:";
-		cin >> yPosition;
+		
+		cout << "Enter row and column:";
+		cin.ignore();
+		
+		cin >> xPosition >> yPosition;
+
 
 		// Range checks first
-		if (xPosition < 0 || xPosition > 2 || yPosition < 0 || yPosition > 2) {
-			cout << "Input is out of range. Please enter values between 0 and 2." << endl;
+		if (xPosition < 1 || xPosition > 3 || yPosition < 1 || yPosition > 3) {
+			cout << "Input is out of range. Please enter values between 1 and 3." << endl;
 			validInput = false;
 
 		}
@@ -109,7 +111,7 @@ void Player::PlayerInputs2() {
 			SamePosition(); // Check if position is occupied
 
 			if (Same==true) {
-				cout << "Invalid position, space already occupied. Please try again." << endl;
+				cout << "Invalid position, Please try again." << endl;
 				validInput = false;
 			}
 			else {
@@ -132,10 +134,10 @@ void Player::PlaceValue() {
 	
 	if (Check == 0) {
 		
-		GameBoard[xPosition][yPosition] = 'X';
+		GameBoard[xPosition-1][yPosition-1] = 'O';
 	}
 	if (Check == 1) {
-		GameBoard[xPosition][yPosition] = 'Y';
+		GameBoard[xPosition-1][yPosition-1] = 'X';
 	}
 	
 }
