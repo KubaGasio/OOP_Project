@@ -13,5 +13,5 @@ public:
 	void Winner();
 	void CheckWin();
 	void WinCounter();
-
+	bool getWin();
 };

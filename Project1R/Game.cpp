@@ -14,8 +14,29 @@ Game::Game() {
     }
     Win = false;
     Tie = false;
+    WCounter2 = 0;
 }
+void Game::resetData() {
+    Turn = 0;
+    
+    CurrentSize = 0;
+    Full = false;
+    for (int i = 0; i < 3; i++) {
 
+        for (int c = 0; c < 3; c++) {
+
+            GameBoard[i][c] = '\0';
+        }
+    }
+   
+    
+}
+int Game::getfull() {
+    if (Full==true) {
+        return 1;
+    }
+    
+}
 void Game::CheckWin() {
 
     for (int i = 0; i < 3; i++) {
@@ -109,7 +130,7 @@ void Game::WinCounter() {
     if (Win == true) {
         WCounter++;
         resetBoard();
-        Win = false;
+        
         
     }
     
@@ -118,6 +139,8 @@ void Game::WinCounter() {
 void Game::isFull() {
     if (CurrentSize == 9) {
         Full = true;
+        cout << "The game is tie.";
+
     }
     else {
         Full = false;
@@ -127,11 +150,7 @@ void Game::isFull() {
 void Game::CheckTie() {
     if (Full = true) {
         Tie = true;
-    }
-    else if (Win = true) {
-        Tie = true;
-    }
-    else {
+    }else {
         Tie = false;
     }
 }

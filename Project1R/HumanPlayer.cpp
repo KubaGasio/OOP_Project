@@ -9,21 +9,22 @@ void HumanPlayer::getUserName2() {
 void HumanPlayer::Winner() {
     int Check = Turn % 2;
 
-    if (Check == 0) {
-        cout << "The winner is " << UserName2 << endl;
-
-    }
     if (Check == 1) {
         cout << "The winner is " << UserName1 << endl;
+        
+    }
+    if (Check == 0) {
+        cout << "The winner is " << UserName2<< endl;
+        
     }
 
 }
 void HumanPlayer::WinCounter() {
     if (Win == true) {
-        WCounter++;
+        
         Winner();
-        resetBoard();
-        Win = false;
+        Game::resetBoard();
+      
 
     }
 
@@ -101,3 +102,7 @@ void HumanPlayer::CheckWin() {
 
 
     }
+
+bool HumanPlayer::getWin() {
+    return Win;
+}

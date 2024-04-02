@@ -17,7 +17,7 @@ protected:
 	bool Win;
 
 	int WCounter;
-
+	int WCounter2;
 	bool Full;
 	int CurrentSize;
 	char GameBoard[3][3];
@@ -25,9 +25,9 @@ protected:
 public:
 
 	Game();
-
+	void resetData();
 	void CheckWin();
-
+	int getfull();
 	void DrawBoard();
 
 	void WinCounter();

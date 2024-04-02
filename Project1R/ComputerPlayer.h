@@ -12,15 +12,16 @@ private:
 public:
 	void ComputerInputEasy(Game& game);
 	void ComputerInputHard(Game& game);
-
-	void setCompXPosition();
-	void setCompYPosition();
-	int getCompXPosition();
-	int getCompYPosition();
-
+	bool isEmpty(int row, int col);
+	int random_move();
+	
+	void Computer_move();
 	void getUserName();
-	bool BlockOpponentWin();
-	bool CheckTwoInARow();
-
-
+	
+	void CheckWin();
+	void WinCounter();
+	void Winner();
+	void NextPlayer();
+	void PlaceValue();
+	bool getWin();
 };
