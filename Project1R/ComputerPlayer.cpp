@@ -67,8 +67,8 @@ void ComputerPlayer::WinCounter() {
     if (Win == true) {
 
         Winner();
-        Game::resetBoard();
-        Win = false;
+       
+        
 
     }
 

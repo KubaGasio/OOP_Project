@@ -34,7 +34,7 @@ int main()
 				Win = h.getWin();
 			} while (tie != true && Win!=true);
 			h.DrawBoard();
-			choice = 0;
+			
 		}
 		else if (choice == 2) {
 			
@@ -67,6 +67,7 @@ int main()
 				}
 			}
 			c.DrawBoard();
+			
 			choice = 0;
 		}
 		else if (choice != 3) {

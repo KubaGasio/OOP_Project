@@ -19,11 +19,12 @@ void HumanPlayer::Winner() {
     }
 
 }
+
 void HumanPlayer::WinCounter() {
     if (Win == true) {
         
         Winner();
-        Game::resetBoard();
+        
       
 
     }

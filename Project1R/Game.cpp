@@ -21,6 +21,8 @@ void Game::resetData() {
     
     CurrentSize = 0;
     Full = false;
+    Win = false;
+    Tie = false;
     for (int i = 0; i < 3; i++) {
 
         for (int c = 0; c < 3; c++) {
