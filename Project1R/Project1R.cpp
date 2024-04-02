@@ -7,6 +7,8 @@ int main()
 {
 	cout << "This is a Tic-Tac-Toe game" << endl;
 	int choice = 0;
+	int choiceComp = 0;
+
 	do {
 
 		cout << "1.Playing with another player." << endl;
@@ -29,6 +31,11 @@ int main()
 			} while (tie = true);
 		}
 		else if (choice == 2) {
+			cout << "You are playing with a computer. Select difficulty: " << endl;
+			cout << "1.Easy" << endl;
+			cout << "2.Hard" << endl;
+			cin >> choiceComp;
+
 			ComputerPlayer c;
 			HumanPlayer h;
 			bool tie = c.getTie();
