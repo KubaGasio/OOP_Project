@@ -27,7 +27,7 @@ public:
 	Game();
 	void resetData();
 	void CheckWin();
-	int getfull();
+	
 	void DrawBoard();
 
 	void WinCounter();

@@ -7,8 +7,8 @@ int main()
 {
 	cout << "This is a Tic-Tac-Toe game" << endl;
 	int choice = 0;
-	int choiceComp = 0;
-	int End = 0;
+	
+	
 	do {
 
 		cout << "1.Playing with another player." << endl;
@@ -32,11 +32,19 @@ int main()
 				h.CheckTie();
 				Win = h.getWin();
 				tie = h.getTie();
-				cout << tie << Win;
+				
 			} while (tie != true && Win!=true);
-		
-			h.WinCounter();
-			h.DrawBoard();
+		    if(Win){
+				
+				h.DrawBoard();
+				h.WinCounter();
+			}
+			else if (tie) {
+				h.DrawBoard();
+				cout << "The game ends in a tie." << endl;
+
+			}
+			
 		}
 		else if (choice == 2) {
 			
@@ -45,47 +53,34 @@ int main()
 			c.resetData();
 			bool tie = false;
 			bool Win = false;
-			while (true) {
-				if (tie == false) {
-					c.DrawBoard();
-					c.NextPlayer();
-					c.PlaceValue();
-					c.CheckWin();
-					c.CheckTie();
-					tie = c.getTie();
-					
-					Win = c.getWin();
-					cout << tie << Win;
-				}
-				else if (Win == false) {
-					c.DrawBoard();
-					c.NextPlayer();
-					c.PlaceValue();
-					c.CheckWin();
-					c.CheckTie();
-					tie = c.getTie();
-					Win = c.getWin();
-					cout << tie << Win;
-				}
-				else {
-					break;
-				}
+
+			do {
+				c.DrawBoard();
+
+				c.NextPlayer();
+				c.PlaceValue();
+				c.CheckWin();
+				c.CheckTie();
+				Win = c.getWin();
+				tie = c.getTie();
+				
+			} while (tie != true && Win != true);
+
+			if (Win) {
+
+				c.DrawBoard();
+				c.WinCounter();
 			}
-			c.DrawBoard();
-			c.WinCounter();
-			
-			
-			
-			
-		}
-		else if (choice !=1) {
-			cout << "You've entered an invalid input. Please try again." << endl;
+			else if (tie) {
+				c.DrawBoard();
+				cout << "The game ends in a tie." << endl;
+			}
 
 		}
-		else if (choice != 2) {
-			cout << "You've entered an invalid input. Please try again." << endl;
+		else if (choice != 3) {
+			cout << "You enter an invalid choice. Please enter again." << endl;
 		}
-
 
 	} while (choice != 3);
+	cout << " GAME END";
 }

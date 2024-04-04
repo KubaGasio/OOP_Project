@@ -33,12 +33,7 @@ void Game::resetData() {
    
     
 }
-int Game::getfull() {
-    if (Full==true) {
-        return 1;
-    }
-    
-}
+
 void Game::CheckWin() {
 
     for (int i = 0; i < 3; i++) {
@@ -144,7 +139,8 @@ void Game::isFull() {
     }
 }
 void Game::CheckTie() {
-    if (Full = true) {
+    isFull();
+    if (Full ==true) {
         Tie = true;
     }else {
         Tie = false;

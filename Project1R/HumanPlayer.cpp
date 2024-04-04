@@ -3,7 +3,8 @@
 void HumanPlayer::getUserName2() {
 	Player::getUserName();
 	cout << "Please give Player2's name:";
-	cin >> UserName2;
+    cin >> UserName2;
+    
 }
 
 void HumanPlayer::Winner() {
@@ -33,7 +34,7 @@ void HumanPlayer::WinCounter() {
 
 }
 void HumanPlayer::CheckWin() {
-    cout << "hi";
+    
     
     for (int i = 0; i < 3; i++) {
 

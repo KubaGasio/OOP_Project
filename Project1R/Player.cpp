@@ -1,5 +1,5 @@
 #include "Player.h" 
-
+#include <string>
 Player::Player() {
 
 
@@ -11,7 +11,7 @@ Player::Player() {
 	yPosition = 1;
 
 	Same = false;
-	inputline = "";
+	
 }
 void Player::setXPosition(int x) {
 	xPosition = x;
