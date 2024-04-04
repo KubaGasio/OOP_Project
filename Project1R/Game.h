@@ -42,6 +42,7 @@ public:
 
 	void resetBoard();
 	
+	void ReturnToMenu();
 
 
 };

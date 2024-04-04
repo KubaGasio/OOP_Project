@@ -28,13 +28,15 @@ int main()
 				
 				h.NextPlayer();
 				h.PlaceValue();
-				h.CheckTie();
 				h.CheckWin();
-				tie = h.getTie();
+				h.CheckTie();
 				Win = h.getWin();
+				tie = h.getTie();
+				cout << tie << Win;
 			} while (tie != true && Win!=true);
+		
+			h.WinCounter();
 			h.DrawBoard();
-			
 		}
 		else if (choice == 2) {
 			
@@ -51,7 +53,9 @@ int main()
 					c.CheckWin();
 					c.CheckTie();
 					tie = c.getTie();
+					
 					Win = c.getWin();
+					cout << tie << Win;
 				}
 				else if (Win == false) {
 					c.DrawBoard();
@@ -61,19 +65,27 @@ int main()
 					c.CheckTie();
 					tie = c.getTie();
 					Win = c.getWin();
+					cout << tie << Win;
 				}
 				else {
 					break;
 				}
 			}
 			c.DrawBoard();
+			c.WinCounter();
 			
-			choice = 0;
+			
+			
+			
 		}
-		else if (choice != 3) {
+		else if (choice !=1) {
 			cout << "You've entered an invalid input. Please try again." << endl;
 
 		}
+		else if (choice != 2) {
+			cout << "You've entered an invalid input. Please try again." << endl;
+		}
+
 
 	} while (choice != 3);
 }

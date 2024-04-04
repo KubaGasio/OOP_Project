@@ -139,15 +139,9 @@ void Game::WinCounter() {
 
 }
 void Game::isFull() {
-    if (CurrentSize == 9) {
+    if (GameBoard[0][0] != '\0' && GameBoard[0][1] != '\0' && GameBoard[0][2] != '\0' && GameBoard[1][0] != '\0' && GameBoard[1][1] != '\0' && GameBoard[1][2] != '\0' && GameBoard[2][0] != '\0' && GameBoard[2][1] != '\0' && GameBoard[2][2] != '\0') {
         Full = true;
-        cout << "The game is tie.";
-
     }
-    else {
-        Full = false;
-    }
-
 }
 void Game::CheckTie() {
     if (Full = true) {
@@ -161,4 +155,7 @@ bool Game::getTie() {
 }
 void Game::PlaceValue() {
 
+}
+bool Game::getWin() {
+    return Win;
 }

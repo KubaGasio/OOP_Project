@@ -36,7 +36,7 @@ public:
 	int getYPosition();
 	void PlaceValue();
 	void SamePosition();
-
+	
 
 };
 

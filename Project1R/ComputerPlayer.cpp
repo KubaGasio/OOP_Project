@@ -1,16 +1,7 @@
 #include "ComputerPlayer.h" 
 #include <random>
 
-void ComputerPlayer::ComputerInputEasy(Game& game) {
 
-	srand(time(0));
-
-	while (true) {
-		int row = rand() % 3;
-		int col = rand() % 3;
-
-		}
-}
 
 
 void ComputerPlayer::getUserName() {
@@ -76,76 +67,44 @@ void ComputerPlayer::WinCounter() {
 }
 
 void ComputerPlayer::CheckWin() {
-
+    
 
     for (int i = 0; i < 3; i++) {
 
-        if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'O') {
+        if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] != '\0') {
 
             Win = true;
-            WinCounter();
+
 
         }
 
-        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'O') {
+        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] != '\0') {
 
             Win = true;
-            WinCounter();
+
 
         }
 
-        else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'O') {
+    }
+    if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[2][2] != '\0') {
 
-            Win = true;
-            WinCounter();
+        Win = true;
 
-        }
-        else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'O') {
 
-            Win = true;
-            WinCounter();
+    }
+    else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] != '\0') {
 
-        }
+        Win = true;
 
-        else if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'X') {
-
-            Win = true;
-            WinCounter();
-
-        }
-
-        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'X') {
-
-            Win = true;
-            WinCounter();
-
-        }
-
-        else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'X') {
-
-            Win = true;
-            WinCounter();
-
-        }
-
-        else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'X') {
-
-            Win = true;
-            WinCounter();
-
-        }
-
-        else {
-
-            Win = false;
-            WinCounter();
-
-        }
 
     }
 
 
 
+
+}
+bool ComputerPlayer::getTie() {
+    return Tie;
 }
 void ComputerPlayer::NextPlayer() {
     int Check = Turn % 2;

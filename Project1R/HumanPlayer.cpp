@@ -30,75 +30,41 @@ void HumanPlayer::WinCounter() {
     }
 
 
+
 }
-
 void HumanPlayer::CheckWin() {
-   
+    cout << "hi";
+    
+    for (int i = 0; i < 3; i++) {
 
-        for (int i = 0; i < 3; i++) {
+        if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] &&GameBoard[i][0]!='\0') {
 
-            if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'O') {
-
-                Win = true;
-                WinCounter();
+              Win = true;
                 
-            }
-
-            else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'O') {
-
-                Win = true;
-                WinCounter();
                 
-            }
+          }
 
-            else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'O') {
-
-                Win = true;
-                WinCounter();
-               
-            }else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'O') {
+        else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] &&GameBoard[1][i] != '\0') {
 
                 Win = true;
-                WinCounter();
-               
-            }
-
-            else if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] == 'X') {
-
-                Win = true;
-                WinCounter();
                 
-            }
-
-            else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] == 'X') {
-
-                Win = true;
-                WinCounter();
                 
-            }
-
-            else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[1][1] == 'X') {
-
-                Win = true;
-                WinCounter();
-                
-            }
-
-            else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] == 'X') {
-
-                Win = true;
-                WinCounter();
-                
-            }
-
-            else {
-
-                Win = false;
-                WinCounter();
-               
             }
 
         }
+        if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] &&GameBoard[2][2] != '\0') {
+
+            Win = true;
+
+
+            }
+        else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[1][1] != '\0') {
+
+            Win = true;
+
+
+            }
+
 
 
 
@@ -106,4 +72,7 @@ void HumanPlayer::CheckWin() {
 
 bool HumanPlayer::getWin() {
     return Win;
+}
+bool HumanPlayer::getTie() {
+    return Tie;
 }

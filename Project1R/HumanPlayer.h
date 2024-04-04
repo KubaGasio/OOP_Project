@@ -3,10 +3,10 @@
 
 class HumanPlayer :public Player {
 
-private:
+protected:
 
 	string UserName2;
-
+	
 public:
 
 	void getUserName2();
@@ -14,4 +14,5 @@ public:
 	void CheckWin();
 	void WinCounter();
 	bool getWin();
+	bool getTie();
 };

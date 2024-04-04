@@ -1,7 +1,7 @@
 #include "Player.h" 
 
 class ComputerPlayer :public Player {
-private:
+protected:
 
 	int CompXPosition;
 
@@ -10,8 +10,6 @@ private:
 	
 
 public:
-	void ComputerInputEasy(Game& game);
-	void ComputerInputHard(Game& game);
 	bool isEmpty(int row, int col);
 	int random_move();
 	
@@ -24,4 +22,5 @@ public:
 	void NextPlayer();
 	void PlaceValue();
 	bool getWin();
+	bool getTie();
 };
