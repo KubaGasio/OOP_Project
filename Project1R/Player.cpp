@@ -59,7 +59,7 @@ void Player::SamePosition() {
 }
 
 void Player::PlayerInputs1() {
-	bool validInput = false; // Flag to control loop
+	bool validInput = false; 
 
 	do {
 		
@@ -67,20 +67,20 @@ void Player::PlayerInputs1() {
 		cin.ignore();
 		cin >> xPosition >> yPosition;
 		
-		// Range checks first
+		
 		if (xPosition < 1 || xPosition > 3 || yPosition < 1 || yPosition > 3) {
 			cout << "Input is out of range. Please enter values between 1 and 3." << endl;
 			validInput = false;
 		}
 		else {
-			SamePosition(); // Check if position is occupied
+			SamePosition(); 
 
 			if (Same==true) {
 				cout << "Invalid position, space already occupied. Please try again." << endl;
 				validInput = false;
 			}
 			else {
-				validInput = true; // Input passed all checks
+				validInput = true; 
 				CurrentSize++;
 				isFull();
 			}
@@ -88,10 +88,10 @@ void Player::PlayerInputs1() {
 	} while (!validInput);
 }
 
-// Modify PlayerInputs2 similarly
+
 
 void Player::PlayerInputs2() {
-	bool validInput = false; // Flag to control loop
+	bool validInput = false; 
 
 	do {
 		
@@ -101,21 +101,21 @@ void Player::PlayerInputs2() {
 		cin >> xPosition >> yPosition;
 
 
-		// Range checks first
+		
 		if (xPosition < 1 || xPosition > 3 || yPosition < 1 || yPosition > 3) {
 			cout << "Input is out of range. Please enter values between 1 and 3." << endl;
 			validInput = false;
 
 		}
 		else {
-			SamePosition(); // Check if position is occupied
+			SamePosition(); 
 
 			if (Same==true) {
 				cout << "Invalid position, Please try again." << endl;
 				validInput = false;
 			}
 			else {
-				validInput = true; // Input passed all checks
+				validInput = true; 
 				CurrentSize++;
 				isFull();
 			}
@@ -123,7 +123,7 @@ void Player::PlayerInputs2() {
 	} while (!validInput);
 }
 
-// Modify PlayerInputs2 similarly
+
 
 void Player::getUserName() {
 	cout << "Please give Player1's name:";

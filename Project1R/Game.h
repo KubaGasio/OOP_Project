@@ -1,21 +1,14 @@
 #pragma once
-
-
 #include <iostream> 
 #include <sstream>
 #include <string>
 using namespace std;
 
-
-
 class Game {
 
 protected:
-
-
 	int Turn;
 	bool Win;
-
 	int WCounter;
 	int WCounter2;
 	bool Full;
@@ -26,6 +19,7 @@ public:
 
 	Game();
 	void resetData();
+
 	void CheckWin();
 	
 	void DrawBoard();
@@ -37,12 +31,10 @@ public:
 	void PlaceValue();
 
 	void CheckTie();
+
 	bool getTie();
+
 	bool getWin();
 
 	void resetBoard();
-	
-	void ReturnToMenu();
-
-
 };

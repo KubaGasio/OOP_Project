@@ -1,17 +1,11 @@
 #include "ComputerPlayer.h" 
 #include <random>
 
-
-
-
 void ComputerPlayer::getUserName() {
 	Player::getUserName();
 	cout << "\nYou are playing with computer.";
 
-
 }
-
-
 
 bool ComputerPlayer::isEmpty(int row,int col) {
 	if (GameBoard[row][col] == '\0') {
@@ -49,7 +43,7 @@ void ComputerPlayer::Winner() {
         WCounter++;
     }
     if (Check == 0) {
-        cout << "The winner is Computer."<< endl;
+        cout << "The computer Wins!"<< endl;
         WCounter2++;
     }
 
@@ -58,12 +52,8 @@ void ComputerPlayer::WinCounter() {
     if (Win == true) {
 
         Winner();
-       
-        
-
+      
     }
-
-
 }
 
 void ComputerPlayer::CheckWin() {
@@ -74,15 +64,11 @@ void ComputerPlayer::CheckWin() {
         if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0] != '\0') {
 
             Win = true;
-
-
         }
 
         else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] && GameBoard[1][i] != '\0') {
 
             Win = true;
-
-
         }
 
     }
@@ -96,13 +82,9 @@ void ComputerPlayer::CheckWin() {
 
         Win = true;
 
-
     }
-
-
-
-
 }
+
 bool ComputerPlayer::getTie() {
     return Tie;
 }

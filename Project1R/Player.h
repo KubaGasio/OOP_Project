@@ -5,12 +5,8 @@ class Player :public Game {
 
 protected:
 
-	
-
 	string UserName1;
-
 	int xPosition;
-
 	int yPosition;
 	bool Same;
 	string inputline;
@@ -34,9 +30,9 @@ public:
 	int getXPosition();
 
 	int getYPosition();
-	void PlaceValue();
-	void SamePosition();
-	
 
+	void PlaceValue();
+
+	void SamePosition();
 };
 

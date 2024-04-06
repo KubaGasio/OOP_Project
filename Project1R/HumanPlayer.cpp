@@ -25,13 +25,7 @@ void HumanPlayer::WinCounter() {
     if (Win == true) {
         
         Winner();
-        
-      
-
     }
-
-
-
 }
 void HumanPlayer::CheckWin() {
     
@@ -43,7 +37,7 @@ void HumanPlayer::CheckWin() {
               Win = true;
                 
                 
-          }
+            }
 
         else if (GameBoard[0][i] == GameBoard[1][i] && GameBoard[1][i] == GameBoard[2][i] &&GameBoard[1][i] != '\0') {
 
@@ -65,10 +59,6 @@ void HumanPlayer::CheckWin() {
 
 
             }
-
-
-
-
     }
 
 bool HumanPlayer::getWin() {

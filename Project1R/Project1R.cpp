@@ -5,7 +5,7 @@
 #include "Player.h"
 int main()
 {
-	cout << "This is a Tic-Tac-Toe game" << endl;
+	cout << "This is a Tic-Tac-Toe game. Please select your game mode:" << endl;
 	int choice = 0;
 	
 	
@@ -25,7 +25,6 @@ int main()
 			bool Win = false;
 			do {
 				h.DrawBoard();
-				
 				h.NextPlayer();
 				h.PlaceValue();
 				h.CheckWin();
@@ -56,7 +55,6 @@ int main()
 
 			do {
 				c.DrawBoard();
-
 				c.NextPlayer();
 				c.PlaceValue();
 				c.CheckWin();
@@ -78,7 +76,7 @@ int main()
 
 		}
 		else if (choice != 3) {
-			cout << "You enter an invalid choice. Please enter again." << endl;
+			cout << "You'vr entered an invalid choice. Please enter again." << endl;
 		}
 
 	} while (choice != 3);
