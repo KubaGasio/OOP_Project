@@ -1,13 +1,6 @@
 #include "Player.h" 
 
 class ComputerPlayer :public Player {
-protected:
-
-	int CompXPosition;
-
-	int CompYPosition;
-
-	
 
 public:
 	bool isEmpty(int row, int col);
