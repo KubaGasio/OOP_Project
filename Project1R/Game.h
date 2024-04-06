@@ -10,7 +10,7 @@ protected:
 	int Turn;
 	bool Win;
 	int WCounter;
-	int WCounter2;
+	
 	bool Full;
 	int CurrentSize;
 	char GameBoard[3][3];

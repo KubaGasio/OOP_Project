@@ -2,7 +2,7 @@
 
 Game::Game() {
     Turn = 0;
-    WCounter = 0;
+
     CurrentSize = 0;
     Full = false;
     for (int i = 0; i < 3; i++) {
@@ -14,7 +14,7 @@ Game::Game() {
     }
     Win = false;
     Tie = false;
-    WCounter2 = 0;
+   
 }
 void Game::resetData() {
     Turn = 0;

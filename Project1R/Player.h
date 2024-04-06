@@ -9,7 +9,7 @@ protected:
 	int xPosition;
 	int yPosition;
 	bool Same;
-	string inputline;
+	
 	
 public:
 

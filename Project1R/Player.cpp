@@ -2,8 +2,6 @@
 #include <string>
 Player::Player() {
 
-
-
 	UserName1 = "";
 
 	xPosition = 1;

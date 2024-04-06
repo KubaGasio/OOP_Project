@@ -44,7 +44,7 @@ void ComputerPlayer::Winner() {
     }
     if (Check == 0) {
         cout << "The computer Wins!"<< endl;
-        WCounter2++;
+        
     }
 
 }
