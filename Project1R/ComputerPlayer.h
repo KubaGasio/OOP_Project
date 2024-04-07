@@ -9,8 +9,6 @@ public:
 
 	void Computer_move();
 
-	void getUserName();
-
 	void CheckWin();
 
 	void WinCounter();

@@ -1,13 +1,14 @@
 #include "HumanPlayer.h"
 
+//Gets the second player's name
 void HumanPlayer::getUserName2() {
 	Player::getUserName();
 	cout << "Please give Player2's name:";
     cin >> UserName2;
     
 }
-
-void HumanPlayer::Winner() {
+//Outputs a message when someone wins
+void HumanPlayer::Winner() { 
     int Check = Turn % 2;
 
     if (Check == 1) {
@@ -20,13 +21,14 @@ void HumanPlayer::Winner() {
     }
 
 }
-
+//Calls the Winner function when someone wins
 void HumanPlayer::WinCounter() {
     if (Win == true) {
         
         Winner();
     }
 }
+//Lists the win conditions for the game
 void HumanPlayer::CheckWin() {
     
     
@@ -60,10 +62,11 @@ void HumanPlayer::CheckWin() {
 
             }
     }
-
+//Returns a value for win
 bool HumanPlayer::getWin() {
     return Win;
 }
+//Returns a value for tie
 bool HumanPlayer::getTie() {
     return Tie;
 }

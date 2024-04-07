@@ -1,6 +1,6 @@
 #include "Game.h" 
 
-Game::Game() {
+Game::Game() { //initializes the game and draws the board
     Turn = 0;
 
     CurrentSize = 0;
@@ -125,7 +125,6 @@ void Game::resetBoard() {
 }
 void Game::WinCounter() {
     if (Win == true) {
-        WCounter++;
         resetBoard();
     }
 }

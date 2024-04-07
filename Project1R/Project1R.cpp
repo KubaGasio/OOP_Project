@@ -8,7 +8,7 @@ int main()
 	cout << "This is a Tic-Tac-Toe game. Please select your game mode:" << endl;
 	int choice = 0;
 	
-	
+	//do while loop to call every function after an input
 	do {
 
 		cout << "1.Playing with another player." << endl;
@@ -16,7 +16,7 @@ int main()
 		cout << "3.Exit" << endl;
 		cout << "Enter your choice: ";
 		cin >> choice;
-		
+		//Option to choose to play against another human
 		if (choice == 1) {
 			HumanPlayer h;
 			h.resetData();
@@ -34,7 +34,7 @@ int main()
 				
 			} while (tie != true && Win!=true);
 		    if(Win){
-				
+		//Displays the menu again following the completion of the game	
 				h.DrawBoard();
 				h.WinCounter();
 			}
@@ -45,6 +45,7 @@ int main()
 			}
 			
 		}
+		//option to play against a computer player
 		else if (choice == 2) {
 			
 			
@@ -75,10 +76,11 @@ int main()
 			}
 
 		}
+		
 		else if (choice != 3) {
-			cout << "You'vr entered an invalid choice. Please enter again." << endl;
+			cout << "You've entered an invalid choice. Please enter again." << endl;
 		}
-
+		//Ends the program if 3 is selected
 	} while (choice != 3);
 	cout << " GAME END";
 }

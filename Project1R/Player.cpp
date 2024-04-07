@@ -1,5 +1,6 @@
 #include "Player.h" 
 #include <string>
+//initializes the username and x/y coordinates in the game
 Player::Player() {
 
 	UserName1 = "";
@@ -11,26 +12,28 @@ Player::Player() {
 	Same = false;
 	
 }
+//setter for the x position
 void Player::setXPosition(int x) {
 	xPosition = x;
 
 }
-
+//setter for the y position
 void Player::setYPosition(int y) {
 	yPosition = y;
 
 }
-
+//getter for the x position
 int Player::getXPosition() {
 	return xPosition;
 
 }
+//getter for the y position
 int Player::getYPosition() {
 	return yPosition;
 }
 
 
-
+//changes turns between players
 void Player::NextPlayer() {
 	int Check = Turn % 2;
 	if (Check == 0) {
@@ -43,6 +46,7 @@ void Player::NextPlayer() {
 	}
 
 }
+//Checks the board so that players cannot place their marker in the same spot
 void Player::SamePosition() {
 
 	if (GameBoard[xPosition-1][yPosition-1] == 'O') {
@@ -55,7 +59,7 @@ void Player::SamePosition() {
 		Same = false;
 	}
 }
-
+//Allows player 1 to input values
 void Player::PlayerInputs1() {
 	bool validInput = false; 
 
@@ -87,7 +91,7 @@ void Player::PlayerInputs1() {
 }
 
 
-
+//Allows opposing player to make an input
 void Player::PlayerInputs2() {
 	bool validInput = false; 
 
@@ -122,7 +126,7 @@ void Player::PlayerInputs2() {
 }
 
 
-
+//Prompts Player1 for their username
 void Player::getUserName() {
 	cout << "Please give Player1's name:";
 	cin >> UserName1;
