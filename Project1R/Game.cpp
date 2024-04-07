@@ -16,7 +16,7 @@ Game::Game() { //initializes the game and draws the board
     Tie = false;
    
 }
-void Game::resetData() {
+void Game::resetData() { //Resets the game state by clearing the board and resets variables
     Turn = 0;
     
     CurrentSize = 0;
@@ -34,7 +34,7 @@ void Game::resetData() {
     
 }
 
-void Game::CheckWin() {
+void Game::CheckWin() { //provides win conditions for the game
 
     for (int i = 0; i < 3; i++) {
 
@@ -98,7 +98,7 @@ void Game::CheckWin() {
 
 
 }
-void Game::DrawBoard() {
+void Game::DrawBoard() { //Creates the board and has rows and columns to make it readable
     cout << "\n   1   2   3" << endl;
     cout << "  ----------" << endl;
     
@@ -113,7 +113,7 @@ void Game::DrawBoard() {
     }
 
 }
-void Game::resetBoard() {
+void Game::resetBoard() { //Resets the Board
     for (int i = 0; i < 3; i++) {
 
         for (int c = 0; c < 3; c++) {
@@ -123,17 +123,17 @@ void Game::resetBoard() {
     }
     Turn = 0;
 }
-void Game::WinCounter() {
+void Game::WinCounter() { //Resets the board if there is a win
     if (Win == true) {
         resetBoard();
     }
 }
-void Game::isFull() {
+void Game::isFull() { //Checks if the board is full
     if (GameBoard[0][0] != '\0' && GameBoard[0][1] != '\0' && GameBoard[0][2] != '\0' && GameBoard[1][0] != '\0' && GameBoard[1][1] != '\0' && GameBoard[1][2] != '\0' && GameBoard[2][0] != '\0' && GameBoard[2][1] != '\0' && GameBoard[2][2] != '\0') {
         Full = true;
     }
 }
-void Game::CheckTie() {
+void Game::CheckTie() { //Checks if the game is a tie
     isFull();
     if (Full ==true) {
         Tie = true;
@@ -141,12 +141,12 @@ void Game::CheckTie() {
         Tie = false;
     }
 }
-bool Game::getTie() {
+bool Game::getTie() { //Returns a value for tie
     return Tie;
 }
-void Game::PlaceValue() {
+void Game::PlaceValue() { 
 
 }
-bool Game::getWin() {
+bool Game::getWin() { //Returns a value for win
     return Win;
 }
